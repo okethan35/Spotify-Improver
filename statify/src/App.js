@@ -1,7 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  const handleClick = () => {
+    setCount(count + 1);
+  };
   return (
     <div className="App">
       <header className="App-header">
@@ -15,8 +21,12 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React {}
         </a>
+        
+        <button onClick={handleClick}>
+          {count}
+        </button>
       </header>
     </div>
   );
